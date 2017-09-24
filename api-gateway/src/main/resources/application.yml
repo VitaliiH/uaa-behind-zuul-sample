@@ -17,9 +17,19 @@ eureka:
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
 
+#Disable timeout checks
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: false
+
 zuul:
   routes:
     dummy-service: /dummy/**
+    public-service: /news/**
+    legacy-service: /api/**
     uaa-service:
       sensitiveHeaders:
       path: /uaa/**
