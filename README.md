@@ -4,6 +4,24 @@
 
 **This project is *Proof of concept* (aka `PoC`)** (and code quality is not perfect), please before using in production review security concerns among other things. (See https://github.com/kakawait/uaa-behind-zuul-sample/issues/6)
 
+## Fork goals
+
+Overall, the fork was done by me to understand, how the Spring-Zuul works itself, and also how uaa may work in conjunction with it.
+
+Additionally, I set myself goals to achieve after shallow investigation. Some of them are about configuration, and other - about Zuul routing:
+
+- Define "legacy" service, that will pretend as "old absolete legacy" server. Redirect some requests using Zuul to LegacyService. The service should have three endpoints, each representing different pages. (Done)
+
+- Cover the legacy api with three separate authorities: "ROLE_USER", "ROLE_GUEST", "ROLE_ADMIN". (Done with no effect - see last bullet)
+
+- Define "public" service, that will handle requests, that don't need any authentication (e.g. a "news" page). (Done. Access rules should be corrected)
+
+- Change timeout policy - currently, it is very strict. Eather disable or make it longer. (Done)
+
+- Security rules, defined via @PreAuthorized in a resource service (e.g. DummyService) seems to be ignored. Is it correct behavior? (TDB)
+
+*See original content of README file below**
+
 ## Change Log
 
 see [CHANGELOG.md](CHANGELOG.md)
