@@ -56,6 +56,8 @@ security:
           -----END PUBLIC KEY-----
       id: openid
       serviceId: ${PREFIX:}resource
+  #Rotes to "PublicService" won't be proceed by the security rules
+  ignored: /news/**
 
 logging:
   level.org.springframework.security: DEBUG
