@@ -14,7 +14,7 @@ Additionally, I set myself goals to achieve after shallow investigation. Some of
 
 - Cover the legacy api with three separate authorities: "ROLE_USER", "ROLE_GUEST", "ROLE_ADMIN". (Done with no effect - see last bullet)
 
-- Define "public" service, that will handle requests, that don't need any authentication (e.g. a "news" page). (Done. Access rules should be corrected)
+- Define "public" service, that will handle requests, that don't need any authentication (e.g. a "news" page). (Done)
 
 - Change timeout policy - currently, it is very strict. Eather disable or make it longer. (Done)
 
