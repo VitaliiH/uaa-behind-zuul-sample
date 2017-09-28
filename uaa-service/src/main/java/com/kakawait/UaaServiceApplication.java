@@ -78,8 +78,9 @@ public class UaaServiceApplication extends WebMvcConfigurerAdapter {
             auth.inMemoryAuthentication()
                     .withUser("user").password("password").roles("USER")
                     .and()
-                    .withUser("admin").password("admin").roles("ADMIN");
-//            auth.parentAuthenticationManager(authenticationManager);
+                    .withUser("admin").password("admin").roles("ADMIN")
+                    .and()
+                    .withUser("guest").password("guest").roles("GUEST");
         }
     }
 
