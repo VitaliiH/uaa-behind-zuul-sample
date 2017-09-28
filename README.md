@@ -12,13 +12,15 @@ Additionally, I set myself goals to achieve after shallow investigation. Some of
 
 - Define "legacy" service, that will pretend as "old absolete legacy" server. Redirect some requests using Zuul to LegacyService. The service should have three endpoints, each representing different pages. (Done)
 
-- Cover the legacy api with three separate authorities: "ROLE_USER", "ROLE_GUEST", "ROLE_ADMIN". (Done with no effect - see last bullet)
+- Cover the legacy api with three separate authorities: "ROLE_USER", "ROLE_GUEST", "ROLE_ADMIN". (Done)
+
+- Redirects to the LegacyService should have "forward" feature, e.g. requests from /api/** should be mapped on legacy's /service/**
 
 - Define "public" service, that will handle requests, that don't need any authentication (e.g. a "news" page). (Done)
 
 - Change timeout policy - currently, it is very strict. Eather disable or make it longer. (Done)
 
-- Security rules, defined via @PreAuthorized in a resource service (e.g. DummyService) seems to be ignored. Is it correct behavior? (TDB)
+- Security rules, defined via @PreAuthorized in a resource service (e.g. DummyService) seems to be ignored. Is it correct behavior? (Done, fixed)
 
 *See original content of README file below**
 
